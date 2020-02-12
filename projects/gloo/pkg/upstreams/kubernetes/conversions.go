@@ -24,7 +24,7 @@ func DestinationToUpstreamRef(svcDest *v1.KubernetesServiceDestination) *core.Re
 }
 
 func fakeUpstreamName(serviceName, serviceNamespace string, port int32) string {
-	regularServiceName := kubeplugin.UpstreamName(serviceNamespace, serviceName, port, nil)
+	regularServiceName := kubeplugin.UpstreamName(serviceNamespace, serviceName, port)
 	return upstreamNamePrefix + regularServiceName
 }
 
