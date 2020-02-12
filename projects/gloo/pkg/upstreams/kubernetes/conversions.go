@@ -41,7 +41,7 @@ func KubeServicesToUpstreams(ctx context.Context, services skkube.ServiceList) v
 }
 
 func serviceToUpstream(ctx context.Context, svc *kubev1.Service, port kubev1.ServicePort) *gloov1.Upstream {
-	us := kubeplugin.DefaultUpstreamConverter().CreateUpstream(ctx, svc, port, nil)
+	us := kubeplugin.DefaultUpstreamConverter().CreateUpstream(ctx, svc, port)
 
 	us.Metadata.Name = fakeUpstreamName(svc.Name, svc.Namespace, port.Port)
 	us.Metadata.Namespace = svc.Namespace
