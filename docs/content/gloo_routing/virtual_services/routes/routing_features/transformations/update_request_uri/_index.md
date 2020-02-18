@@ -103,11 +103,10 @@ The above `options` configuration is to be interpreted as following:
 
 1. Add a transformation to all traffic handled by this Virtual Host.
 1. Apply the transformation only to requests.
-1. Use a [template transformation]({{< ref "gloo_routing/virtual_services/routes/routing_features/transformations#transformation-templates" >}}).
+1. Use a [template transformation]({{% versioned_link_path fromRoot="/gloo_routing/virtual_services/routes/routing_features/transformations#transformation-templates" %}}).
 1. Update the `:path` and `:method` pseudo-headers if the `foo` header is present and has value `bar`; otherwise keep the original values.
 
-The template uses the [Inja templating language]({{< ref "gloo_routing/virtual_services/routes/routing_features/transformations#templating-language" >}}) 
-to define the conditional logic that will be applied to the `:path` and `:method` pseudo-headers.
+The template uses the [Inja templating language]({{% versioned_link_path fromRoot="/gloo_routing/virtual_services/routes/routing_features/transformations#templating-language" %}}) to define the conditional logic that will be applied to the `:path` and `:method` pseudo-headers.
 
 #### Test our configuration
 To test that our configuration has been correctly applied, let's add the `foo` header with the expected `bar` value to 
