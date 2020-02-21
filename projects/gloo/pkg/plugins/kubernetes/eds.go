@@ -200,7 +200,7 @@ func filterEndpoints(ctx context.Context, writeNamespace string, kubeEndpoints [
 			}
 		}
 		if kubeServicePort == nil {
-			logger.Errorf("upstream %v: port %v not found for service %v", usRef.Key(), spec.ServicePort, spec.ServiceName)
+			logger.Warnf("upstream %v: port %v not found for service %v", usRef.Key(), spec.ServicePort, spec.ServiceName)
 			continue
 		}
 		// find each matching endpoint
